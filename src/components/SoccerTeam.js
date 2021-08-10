@@ -41,7 +41,7 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
                     <input name="founded" value={newSoccerTeam.founded} onChange={handleChange}></input><br/>
                     <input name="country" value={newSoccerTeam.country} onChange={handleChange}></input><br/>
                     <input name="manager" value={newSoccerTeam.manager} onChange={handleChange}></input><br/>
-                    <input name="logo" value={newSoccerTeam.img_url} onChange={handleChange}></input><br/>
+                    <input name="img_url" value={newSoccerTeam.img_url} onChange={handleChange}></input><br/>
                     <button type="submit">Update Soccer Team</button>
                     
                 </form>

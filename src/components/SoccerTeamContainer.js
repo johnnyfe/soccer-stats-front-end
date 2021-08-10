@@ -22,17 +22,14 @@ function SoccerTeamContainer() {
 
     //CREATE
 
-    function createSoccerTeam(soccer_team){
-        fetch(BASE_URL + "soccer_teams", {
-            method: "POST",
-            body: JSON.stringify(soccer_team),
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            .then((json) => setSoccerTeams([...soccerTeams, json]));
+    useEffect(() => {
+        console.log(soccerTeams)
+    }, [soccerTeams])
+
+
+    function handleAddSoccerTeam(newSoccerTeam){
+        const updatedSoccerTeam=([...soccerTeams,newSoccerTeam])
+        return setSoccerTeams(updatedSoccerTeam);
     }
 
     //UPDATE
@@ -66,7 +63,7 @@ function SoccerTeamContainer() {
     return (
 
         <div>
-            <SoccerTeamForm createSoccerTeam={createSoccerTeam} />
+            <SoccerTeamForm handleAddSoccerTeam={handleAddSoccerTeam} />
             <div className="soccer-team-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
     )
