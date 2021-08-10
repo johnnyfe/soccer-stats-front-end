@@ -1,13 +1,20 @@
 import React from 'react';
 
-function SoccerTeam({soccer_team}) {
+function SoccerTeam({soccer_team, deleteSoccerTeam}) {
+
+    const ts = new Date(soccer_team.founded);
+    let soccer_team_foundation =ts.toLocaleDateString();
+
     return (
         <div>
-            {soccer_team.name}<br/>
-            {soccer_team.founded}<br/>
-            {soccer_team.country}<br/>
-            {soccer_team.manager}<br/>
-            {soccer_team.img_url}<br/> <br/>
+           <br />
+            <p>{soccer_team.name}</p>
+            <p>{soccer_team_foundation}</p>
+            <p>{soccer_team.country} </p>
+            <p>{soccer_team.manager}</p>
+            <img src={soccer_team.img_url} alt={soccer_team.name}></img>
+           <br />
+           <button onClick={() => deleteSoccerTeam(soccer_team)}>Delete Team</button>
         </div>
     );
 }

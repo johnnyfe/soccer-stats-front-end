@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react'
 import {BASE_URL} from '../constraints/index'
 import SoccerTeam from './SoccerTeam'
 
-export default function SoccerTeamContainer() {
+function SoccerTeamContainer() {
 
-    const [soccerTeams, setSoccerTeams] = useState(null)
+    const [soccerTeams, setSoccerTeams] = useState([])
 
     useEffect(() => {
         fetch(BASE_URL + 'soccer_teams')
@@ -12,13 +12,16 @@ export default function SoccerTeamContainer() {
         .then(setSoccerTeams)
     }, [])
 
-    useEffect(() => {
-        console.log("Soccer Teams: ")
-        console.log(soccerTeams)
-    }, [soccerTeams])
-
     function populateSoccerTeams() {
-        return soccerTeams.map(soccer_team => <SoccerTeam soccer_team={soccer_team} /> )
+        return soccerTeams.map(soccer_team => <SoccerTeam soccer_team={soccer_team} deleteSoccerTeam={deleteSoccerTeam} key={soccer_team.id}/> )
+    }
+
+    function deleteSoccerTeam(soccer_team){
+        fetch(BASE_URL + 'soccer_teams/' + soccer_team.id, {
+            method: "DELETE"
+        })
+        const newSoccerTeams= soccerTeams.filter(st => st.id!== soccer_team.id)
+        setSoccerTeams(newSoccerTeams)
     }
 
     return (
@@ -26,4 +29,7 @@ export default function SoccerTeamContainer() {
             {soccerTeams && populateSoccerTeams()}
         </div>
     )
+
 }
+
+export default SoccerTeamContainer
