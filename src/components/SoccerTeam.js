@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
 
@@ -26,7 +27,9 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
     return (
         <div>
            <br />
-            <p>{soccer_team.name}</p>
+           <Link to={`/soccer_teams/${soccer_team.id}`}>
+                <p>{soccer_team.name}</p>
+           </Link>
             <p>{soccer_team_foundation}</p>
             <p>{soccer_team.country} </p>
             <p>{soccer_team.manager}</p>

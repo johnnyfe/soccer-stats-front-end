@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from "../constraints/index"
+import SoccerPlayer from './SoccerPlayer';
 
 function SoccerTeamDetails() {
 
@@ -27,20 +28,7 @@ function SoccerTeamDetails() {
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
-                {soccerTeam.soccer_players.map( player => (
-                    <div>
-                        <p>Name: {player.name}</p>
-                        <p>Age: {player.age}</p>
-                        <p>Matches: {player.matches}</p>
-                        <p>Goals: {player.goals}</p>
-                        <p>Assists: {player.assists}</p>
-                        <p>Yellow Cards: {player.yellow_cards}</p>
-                        <p>Red Cards: {player.red_cards}</p>
-                        <p>Position: {player.position}</p>
-                        <p>Country: {player.country}</p>
-                        <img src={player.img_url} alt={player.name}></img>
-                    </div>
-            ))}
+                {soccerTeam.soccer_players.map(soccerPlayer => <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />)}
             </>
             )}
         </div>
