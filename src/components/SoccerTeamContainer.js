@@ -64,9 +64,9 @@ function SoccerTeamContainer() {
     }
 
     return (
-        <div>
-            <div className="gym-container">{soccerTeams && populateSoccerTeams()}</div>
-            <SoccerTeamForm createSoccerTeam={createSoccerTeam} />
+
+            <div><SoccerTeamForm createSoccerTeam={createSoccerTeam} />
+            <div className="soccer-team-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
     )
 
