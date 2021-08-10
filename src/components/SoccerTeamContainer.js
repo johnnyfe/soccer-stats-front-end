@@ -19,6 +19,21 @@ function SoccerTeamContainer() {
         <SoccerTeam soccer_team={soccer_team} deleteSoccerTeam={deleteSoccerTeam} updateSoccerTeam={updateSoccerTeam} key={soccer_team.id}/> ));
     }
 
+    //CREATE
+
+    function createSoccerTeam(soccer_team){
+        fetch(BASE_URL + "soccer_teams", {
+            method: "POST",
+            body: JSON.stringify(soccer_team),
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((json) => setSoccerTeams([...soccerTeams, json]));
+    }
+
     //UPDATE
     
     function updateSoccerTeam(soccer_team) {
@@ -49,7 +64,7 @@ function SoccerTeamContainer() {
 
     return (
         <div>
-            {soccerTeams && populateSoccerTeams()}
+            <div className="gym-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
     )
 
