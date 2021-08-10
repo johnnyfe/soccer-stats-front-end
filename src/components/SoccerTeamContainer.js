@@ -5,7 +5,7 @@ import SoccerTeamForm from './SoccerTeamForm';
 
 function SoccerTeamContainer() {
 
-    const [soccerTeams, setSoccerTeams] = useState([])
+    const [soccerTeams, setSoccerTeams] = useState(null);
     
     //READ
 
@@ -65,7 +65,8 @@ function SoccerTeamContainer() {
 
     return (
 
-            <div><SoccerTeamForm createSoccerTeam={createSoccerTeam} />
+        <div>
+            <SoccerTeamForm createSoccerTeam={createSoccerTeam} />
             <div className="soccer-team-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
     )
