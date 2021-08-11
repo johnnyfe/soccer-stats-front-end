@@ -9,7 +9,9 @@
 }
 
 .soccer-player-card {
-    margin: 10vw;
+    margin-bottom: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(70,94,164,1) 37%, rgba(0,212,255,1) 100%);
 }
