@@ -1,0 +1,19 @@
+.home-page-container{
+    font-size:  1.8em;
+}
+
+h1 {
+    position: relative;
+  font-family: 'Exo';
+  font-size: 2em;
+  margin: 0;
+  transform: skew(-15deg);
+  letter-spacing: 0.03em;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,180,71,1) 32%, rgba(0,212,255,1) 100%);
+}
+
+p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+}
+
