@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {BASE_URL} from '../constraints/index';
 import SoccerTeam from './SoccerTeam';
 import SoccerTeamForm from './SoccerTeamForm';
+import "../styles/SoccerTeamContainer.css";
 
 function SoccerTeamContainer() {
 

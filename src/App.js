@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
         <div className="app-container">
-          <div className="app-background"/>
+          <div className="app-background">
           <NavBar />
           <Switch>
             <Route exact path="/soccer_players">
@@ -26,6 +26,7 @@ function App() {
               <SoccerTeamDetails />
             </Route>
           </Switch>
+          </div>
         </div>
     </Router>
   );
