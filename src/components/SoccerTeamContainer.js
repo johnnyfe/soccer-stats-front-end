@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react'
-import {BASE_URL} from '../constraints/index'
-import SoccerTeam from './SoccerTeam'
+import React, {useEffect, useState} from 'react';
+import {BASE_URL} from '../constraints/index';
+import SoccerTeam from './SoccerTeam';
 import SoccerTeamForm from './SoccerTeamForm';
 
 function SoccerTeamContainer() {
@@ -21,11 +21,6 @@ function SoccerTeamContainer() {
     }
 
     //CREATE
-
-    useEffect(() => {
-        console.log(soccerTeams)
-    }, [soccerTeams])
-
 
     function handleAddSoccerTeam(newSoccerTeam){
         const updatedSoccerTeam=([...soccerTeams,newSoccerTeam])
