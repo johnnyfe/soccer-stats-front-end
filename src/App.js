@@ -13,6 +13,9 @@ function App() {
           <div className="app-background"/>
           <NavBar />
           <Switch>
+            <Route exact path="/soccer_players">
+              <h2>All players comes here!</h2>
+            </Route>
             <Route exact path="/">
               <HomePage />
             </Route>

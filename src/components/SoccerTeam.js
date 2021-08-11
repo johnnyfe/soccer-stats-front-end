@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import "../styles/SoccerTeam.css";
 
 function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
 

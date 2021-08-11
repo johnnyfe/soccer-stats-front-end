@@ -1,0 +1,27 @@
+.soccer-team-card{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    width: 25vw;
+    height: 25vw;
+    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(70,94,164,1) 37%, rgba(0,212,255,1) 100%);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+a:link {
+    color: wheat
+}
+
+a:visited {
+    color: lightgrey
+}
