@@ -36,11 +36,16 @@ function SoccerTeamForm({handleAddSoccerTeam}) {
         <div className="soccer-team-form">
             <h2>Create A New Soccer Team</h2>
             <form onSubmit={handleSubmit}>
-                <input name="name" placeholder="Name" value={soccerTeam.name} onChange={handleChange} ></input> <br/>
-                <input name="founded" placeholder="Date of Creation" value={soccerTeam.founded} onChange={handleChange} ></input><br/>
-                <input name="country" placeholder="Country" value={soccerTeam.country} onChange={handleChange} ></input><br/>
-                <input name="manager" placeholder="Coach" value={soccerTeam.manager} onChange={handleChange} ></input><br/>
-                <input name="img_url" placeholder="Link for logo" value={soccerTeam.img_url} onChange={handleChange}></input><br/>
+                <label>Name: </label>
+                <input name="name" placeholder="Barcelona" value={soccerTeam.name} onChange={handleChange} ></input> <br/>
+                <label>Date of Creation: </label>
+                <input name="founded" placeholder="yyyy-mm-dd" value={soccerTeam.founded} onChange={handleChange} ></input><br/>
+                <label>Country: </label>
+                <input name="country" placeholder="Spain" value={soccerTeam.country} onChange={handleChange} ></input><br/>
+                <label>Coach: </label>
+                <input name="manager" placeholder="Ronald Koeman" value={soccerTeam.manager} onChange={handleChange} ></input><br/>
+                <label>Link Logo: </label>
+                <input name="img_url" placeholder="img-url.jpg" value={soccerTeam.img_url} onChange={handleChange}></input><br/>
                 <button type="submit">Create Team</button>
             </form>
         </div>
