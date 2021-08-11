@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from "../constraints/index"
+import { useHistory } from 'react-router';
 import SoccerPlayer from './SoccerPlayer';
 import SoccerPlayerForm from './SoccerPlayerForm';
 
 function SoccerTeamDetails({createSoccerPlayer}) {
+
+    const history = useHistory();
 
     const [soccerTeam, setSoccerTeam] = useState(null);
     
@@ -12,8 +15,17 @@ function SoccerTeamDetails({createSoccerPlayer}) {
     
     useEffect(() => {
         fetch(BASE_URL + 'soccer_teams/' + id)
-        .then((res) => res.json())
+        .then((res) => { 
+            if(!res.ok){
+                throw Error(res.statusText)
+            }
+            return res.json()
+        })
         .then((json) => setSoccerTeam(json))
+        .catch(error => {
+            console.log(error)
+            history.push('/')
+        })
     }, [id]);
 
 
@@ -46,7 +58,7 @@ function SoccerTeamDetails({createSoccerPlayer}) {
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
                 <br/><br/><h2>List of Players</h2>
-                {soccerTeam.soccer_players.map(soccerPlayer => <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />)}
+                {soccerTeam && soccerTeam.soccer_players.map(soccerPlayer => <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />)}
                 <h3>Add New Soccer Player</h3>
                 <SoccerPlayerForm createSoccerPlayer={createSoccerPlayer}/>
             </>
