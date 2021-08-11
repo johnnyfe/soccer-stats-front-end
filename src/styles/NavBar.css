@@ -1,0 +1,21 @@
+.navbar {
+    width: 100vw;
+    height: 40px;
+    background-color: rgba(13, 185, 238, 0.438);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid green;
+    box-shadow: 1px 1px 5px green;
+    font-family: 'Ink Free';
+    font-size: 2em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: lightyellow;
+}
+
+.navbar a:visited {
+    color: rgb(255, 255, 255);
+}
