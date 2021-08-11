@@ -39,11 +39,13 @@ function SoccerTeamDetails({createSoccerPlayer}) {
         <div>
             {soccerTeam && (
             <>
+                <h2>Soccer Team</h2>
                 <p>Soccer Team: {soccerTeam.name}</p>
                 <p>Date Founded: {soccerTeam.founded}</p>
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
+                <br/><br/><h2>List of Players</h2>
                 {soccerTeam.soccer_players.map(soccerPlayer => <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />)}
                 <h3>Add New Soccer Player</h3>
                 <SoccerPlayerForm createSoccerPlayer={createSoccerPlayer}/>
