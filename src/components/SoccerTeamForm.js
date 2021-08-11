@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {BASE_URL} from "../constraints/index"
+import "../styles/SoccerTeamForm.css"
 
 function SoccerTeamForm({handleAddSoccerTeam}) {
 
@@ -32,7 +33,7 @@ function SoccerTeamForm({handleAddSoccerTeam}) {
     }
 
     return (
-        <div>
+        <div className="soccer-team-form">
             <h2>Create A New Soccer Team</h2>
             <form onSubmit={handleSubmit}>
                 <input name="name" placeholder="Name" value={soccerTeam.name} onChange={handleChange} ></input> <br/>
