@@ -9,16 +9,13 @@ function SoccerTeamDetails({createSoccerPlayer}) {
     const [soccerTeam, setSoccerTeam] = useState(null);
     
     const { id } = useParams();
-
+    
     useEffect(() => {
         fetch(BASE_URL + 'soccer_teams/' + id)
-        .then(res => res.json())
-        .then(json => setSoccerTeam(json))
+        .then((res) => res.json())
+        .then((json) => setSoccerTeam(json))
     }, [id]);
 
-    useEffect(() => {
-        console.log(soccerTeam)
-    }, [soccerTeam])
 
     function createSoccerPlayer(soccerPlayerDetails){
         const newSoccerPlayer = {
@@ -33,7 +30,6 @@ function SoccerTeamDetails({createSoccerPlayer}) {
         .then((r) => r.json())
         
         .then((json) => {
-            console.log(json)
             const newSoccerTeam = {...soccerTeam, soccer_players: [...soccerTeam.soccer_players, json] };
             setSoccerTeam(newSoccerTeam);
         })

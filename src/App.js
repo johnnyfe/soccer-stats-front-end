@@ -4,6 +4,7 @@ import SoccerTeamContainer from './components/SoccerTeamContainer'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import SoccerTeamDetails from './components/SoccerTeamDetails';
 import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -13,10 +14,9 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <h2>HomePage</h2>
+              <HomePage />
             </Route>
             <Route exact path="/soccer_teams">
-              <h1>Soccer Info App</h1>
               <SoccerTeamContainer />
             </Route>
             <Route path="/soccer_teams/:id">

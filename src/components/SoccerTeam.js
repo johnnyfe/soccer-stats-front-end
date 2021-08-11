@@ -20,12 +20,13 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
     }
 
     function handleUpdate(e){
-        e.preventDefault()
+        e.preventDefault();
         updateSoccerTeam(newSoccerTeam);
+        setEditMode(false);
     }
 
     return (
-        <div>
+        <div className="soccer-team-card">
            <br />
            <Link to={`/soccer_teams/${soccer_team.id}`}>
                 <p>{soccer_team.name}</p>

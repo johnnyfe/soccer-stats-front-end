@@ -47,6 +47,8 @@ function SoccerTeamContainer() {
         setSoccerTeams(newSoccerTeams)
     }
 
+    //DELETE
+
     function deleteSoccerTeam(soccer_team){
         fetch(BASE_URL + 'soccer_teams/' + soccer_team.id, {
             method: "DELETE"
@@ -58,6 +60,7 @@ function SoccerTeamContainer() {
     return (
 
         <div>
+            <h2 className="soccer-teams-header">All Soccer Teams</h2>
             <SoccerTeamForm handleAddSoccerTeam={handleAddSoccerTeam} />
             <div className="soccer-team-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
