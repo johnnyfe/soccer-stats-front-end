@@ -4,6 +4,7 @@ import { BASE_URL } from "../constraints/index"
 import { useHistory } from 'react-router';
 import SoccerPlayer from './SoccerPlayer';
 import SoccerPlayerForm from './SoccerPlayerForm';
+import "../styles/SoccerTeamDetails.css"
 
 function SoccerTeamDetails({createSoccerPlayer}) {
 
@@ -82,13 +83,14 @@ function SoccerTeamDetails({createSoccerPlayer}) {
     return (
         <div>
             {soccerTeam && (
-            <>
+            <>  <div className="soccer-team-selected">
                 <h2>Soccer Team</h2>
                 <p>Soccer Team: {soccerTeam.name}</p>
                 <p>Date Founded: {parseSoccerTeamDate()}</p>
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
+                </div>
                 <h2>List of Players</h2>
                 <select value={selectedPosition} onChange={handleSelectPosition}>
                     <option value ="ALL">All Positions</option>

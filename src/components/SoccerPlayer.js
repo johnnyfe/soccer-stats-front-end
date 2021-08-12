@@ -9,26 +9,40 @@ function SoccerPlayer({soccerPlayer}) {
                 <tbody>
                  <tr>
                     <th>Name</th>
-                    <th>Age</th>
-                    <th>Matches</th>
-                    <th>Goals</th>
-                    <th>Assists</th>
-                    <th>Yellow Cards</th>
-                    <th>Red Cards</th>
-                    <th>Position</th>
-                    <th>Country</th>
-                </tr>
-                 <tr>
                     <td>{soccerPlayer.name}</td>
+                 </tr>
+                 <tr>
+                    <th>Age</th>
                     <td>{soccerPlayer.age}</td>
-                    <td>{soccerPlayer.matches}</td>
-                    <td>{soccerPlayer.goals}</td>
-                    <td>{soccerPlayer.assists}</td>
-                    <td>{soccerPlayer.yellow_cards}</td>
-                    <td>{soccerPlayer.red_cards}</td>
-                    <td>{soccerPlayer.position}</td>
-                    <td>{soccerPlayer.country}</td>
-                 </tr>   
+                 </tr>
+                 <tr>
+                     <th>Matches</th> 
+                     <td>{soccerPlayer.matches}</td>
+                 </tr>
+                 <tr>
+                     <th>Goals</th>
+                     <td>{soccerPlayer.goals}</td>
+                 </tr>
+                 <tr>
+                     <th>Assists</th>
+                     <td>{soccerPlayer.assists}</td>
+                 </tr>
+                 <tr>
+                     <th>Yellow Cards</th>
+                     <td>{soccerPlayer.yellow_cards}</td>
+                 </tr>
+                 <tr>
+                     <th>Red Cards</th>
+                     <td>{soccerPlayer.red_cards}</td>
+                 </tr>
+                 <tr>
+                     <th>Position</th>
+                     <td>{soccerPlayer.position}</td>
+                 </tr>
+                 <tr>
+                     <th>Country</th>
+                     <td>{soccerPlayer.country}</td>
+                 </tr> 
                 </tbody>
             </table>
         </div>

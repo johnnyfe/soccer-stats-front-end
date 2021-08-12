@@ -2,10 +2,39 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .soccer-team-header h2{
     text-align: center;
     color: green;
+}
+
+
+@media (min-width: 1200px) {
+    .soccer-team-container {
+        width: 100vw;
+        justify-content: center;
+        flex: none;
+    }
+}
+
+@media (max-width: 900px) {
+    
+    .soccer-team-card img {
+        width: 20vw;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .soccer-team-card img {
+        width: 15vw;
+    }
+}
+
+@media (max-width: 360px) {
+    
+    .soccer-team-card img {
+        width: 30vw;
+    }
 }

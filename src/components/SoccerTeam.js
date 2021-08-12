@@ -33,9 +33,9 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
            <Link to={`/soccer_teams/${soccer_team.id}`}>
                 <p>{soccer_team.name}</p>
            </Link>
-            <p>{soccer_team_date}</p>
-            <p>{soccer_team.country} </p>
-            <p>{soccer_team.manager}</p>
+            <p><small>Date of Creation: </small>{soccer_team_date}</p>
+            <p><small>Country: </small>{soccer_team.country} </p>
+            <p><small>Manager: </small>{soccer_team.manager}</p>
             <img src={soccer_team.img_url} alt={soccer_team.name}></img>
            <br />
            {editMode && (
