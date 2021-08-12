@@ -10,6 +10,7 @@ function SoccerTeamDetails({createSoccerPlayer}) {
     const history = useHistory();
 
     const [soccerTeam, setSoccerTeam] = useState(null);
+    const [selectedPosition, setSelectedPosition] = useState("ALL")
     
     const { id } = useParams();
     
@@ -27,6 +28,30 @@ function SoccerTeamDetails({createSoccerPlayer}) {
             history.push('/')
         })
     }, [id]);
+
+    function uniquePositions(){
+        const positions = soccerTeam.soccer_players.map((soccerPlayer) => soccerPlayer.position);
+        const uniquePosition = [...new Set(positions)];
+        return uniquePosition
+    }
+
+    function populatePositionOptions(){
+        return uniquePositions().map((position) => 
+        (<option value={position}>{position}</option>));
+    }
+
+    function handleSelectPosition(e) {
+        setSelectedPosition(e.target.value)
+    }
+
+    function filteredSoccerPlayers(){
+        if (selectedPosition === "ALL") {
+            return soccerTeam.soccer_players;
+        }
+        return soccerTeam.soccer_players.filter(
+            (soccerPlayer) => soccerPlayer.position === selectedPosition
+        );
+    }
 
 
     function createSoccerPlayer(soccerPlayerDetails){
@@ -47,18 +72,33 @@ function SoccerTeamDetails({createSoccerPlayer}) {
         })
     }
 
+    function parseSoccerTeamDate(){
+        const ts = new Date(soccerTeam.founded);
+        ts.setHours(24);
+        let soccer_team_date =ts.toLocaleDateString();
+        return soccer_team_date
+    }
+
     return (
         <div>
             {soccerTeam && (
             <>
                 <h2>Soccer Team</h2>
                 <p>Soccer Team: {soccerTeam.name}</p>
-                <p>Date Founded: {soccerTeam.founded}</p>
+                <p>Date Founded: {parseSoccerTeamDate()}</p>
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
-                <br/><br/><h2>List of Players</h2>
-                {soccerTeam && soccerTeam.soccer_players.map(soccerPlayer => <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />)}
+                <h2>List of Players</h2>
+                <select value={selectedPosition} onChange={handleSelectPosition}>
+                    <option value ="ALL">All Positions</option>
+                    {populatePositionOptions()}
+                </select>
+                <div className = "soccer-player-card-container">
+                    {filteredSoccerPlayers().map((soccerPlayer) => (
+                        <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />
+                    ))}
+                </div>
                 <h3>Add New Soccer Player</h3>
                 <SoccerPlayerForm createSoccerPlayer={createSoccerPlayer}/>
             </>

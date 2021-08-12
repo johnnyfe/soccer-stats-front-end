@@ -8,7 +8,8 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
     const [editMode, setEditMode] = useState(false);
 
     const ts = new Date(soccer_team.founded);
-    let soccer_team_foundation =ts.toLocaleDateString();
+    ts.setHours(24);
+    let soccer_team_date =ts.toLocaleDateString();
 
     function handleChange(e){
         const updateValue = {...newSoccerTeam}
@@ -32,7 +33,7 @@ function SoccerTeam({soccer_team, deleteSoccerTeam, updateSoccerTeam}) {
            <Link to={`/soccer_teams/${soccer_team.id}`}>
                 <p>{soccer_team.name}</p>
            </Link>
-            <p>{soccer_team_foundation}</p>
+            <p>{soccer_team_date}</p>
             <p>{soccer_team.country} </p>
             <p>{soccer_team.manager}</p>
             <img src={soccer_team.img_url} alt={soccer_team.name}></img>
