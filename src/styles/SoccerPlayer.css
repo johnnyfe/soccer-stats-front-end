@@ -6,8 +6,8 @@
 .soccer-player-card img {
     width: 25vw;
     height: 25vw;
-    padding: 1vw;
-    position: relative;
+    margin: 1em;
+    padding: 1em;
 }
 
 .soccer-player-card {

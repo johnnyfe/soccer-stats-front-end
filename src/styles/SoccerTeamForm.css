@@ -7,7 +7,7 @@
     width: auto;
     height: 10px;
     font-family: "MV Boli";
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 .soccer-team-form ::placeholder {

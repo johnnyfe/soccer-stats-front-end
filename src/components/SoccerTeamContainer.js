@@ -61,8 +61,8 @@ function SoccerTeamContainer() {
     return (
 
         <div>
-            <h2 className="soccer-teams-header">All Soccer Teams</h2>
             <div className="soccer-team-form"><SoccerTeamForm handleAddSoccerTeam={handleAddSoccerTeam} /></div>
+            <h2 className="soccer-teams-header">All Soccer Teams</h2>
             <div className="soccer-team-container">{soccerTeams && populateSoccerTeams()}</div>
         </div>
     )
