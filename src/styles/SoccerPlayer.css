@@ -1,6 +1,14 @@
 .soccer-player-card table, th,td {
 	border:1px solid #EEEEEE;
-    padding: 0.5vw;
+    padding: 1vw;
+}
+
+.soccer-player-card th {
+    color: black;
+}
+
+.soccer-player-card td {
+    color: darkblue;
 }
 
 .soccer-player-card img {

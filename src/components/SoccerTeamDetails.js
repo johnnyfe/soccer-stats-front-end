@@ -6,7 +6,7 @@ import SoccerPlayer from './SoccerPlayer';
 import SoccerPlayerForm from './SoccerPlayerForm';
 import "../styles/SoccerTeamDetails.css"
 
-function SoccerTeamDetails({createSoccerPlayer}) {
+function SoccerTeamDetails() {
 
     const history = useHistory();
 
@@ -28,7 +28,7 @@ function SoccerTeamDetails({createSoccerPlayer}) {
             console.log(error)
             history.push('/')
         })
-    }, [id]);
+    }, [id, history]);
 
     function uniquePositions(){
         const positions = soccerTeam.soccer_players.map((soccerPlayer) => soccerPlayer.position);
@@ -86,7 +86,7 @@ function SoccerTeamDetails({createSoccerPlayer}) {
             <>  <div className="soccer-team-selected">
                 <h2>Soccer Team</h2>
                 <p>Soccer Team: {soccerTeam.name}</p>
-                <p>Date Founded: {parseSoccerTeamDate()}</p>
+                <p>Date Founded: {parseSoccerTeamDate(id)}</p>
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
