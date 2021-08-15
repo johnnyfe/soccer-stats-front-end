@@ -6,6 +6,7 @@ import SoccerPlayer from './SoccerPlayer';
 import SoccerPlayerForm from './SoccerPlayerForm';
 import "../styles/SoccerTeamDetails.css"
 
+
 function SoccerTeamDetails() {
 
     const history = useHistory();
@@ -23,7 +24,7 @@ function SoccerTeamDetails() {
             }
             return res.json()
         })
-        .then((json) => setSoccerTeam(json))
+        .then((json) => {setSoccerTeam(json) })
         .catch(error => {
             console.log(error)
             history.push('/')
@@ -31,9 +32,11 @@ function SoccerTeamDetails() {
     }, [id, history]);
 
     function uniquePositions(){
-        const positions = soccerTeam.soccer_players.map((soccerPlayer) => soccerPlayer.position);
+        if (soccerTeam !== null) {
+            const positions = soccerTeam.soccer_players.map((soccerPlayer) => soccerPlayer.position);
         const uniquePosition = [...new Set(positions)];
         return uniquePosition
+        }
     }
 
     function populatePositionOptions(){

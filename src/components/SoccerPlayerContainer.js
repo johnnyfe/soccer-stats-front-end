@@ -10,16 +10,13 @@ function SoccerPlayerContainer() {
     useEffect(() =>{
         fetch(BASE_URL + "soccer_players")
         .then(r => r.json())
-        .then(json =>{setSoccerPlayers(json)
-            console.log(json) })
+        .then(json =>setSoccerPlayers(json))
     }, [])
 
     function handleAddSoccerPlayer(){
         return soccerPlayers.map((soccer_player) => (<SoccerPlayerAll soccer_player={soccer_player} key={soccer_player.id}/>))
     }
-
     
-
     return (
         <div>
             <div className='soccer-player-container'>
