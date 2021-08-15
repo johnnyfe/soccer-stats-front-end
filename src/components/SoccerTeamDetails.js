@@ -84,22 +84,24 @@ function SoccerTeamDetails() {
         <div>
             {soccerTeam && (
             <>  <div className="soccer-team-selected">
-                <h2>Soccer Team</h2>
-                <p>Soccer Team: {soccerTeam.name}</p>
-                <p>Date Founded: {parseSoccerTeamDate()}</p>
-                <p>Nationality: {soccerTeam.country}</p>
-                <p>Coach: {soccerTeam.manager}</p>
-                <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
-                </div>
+                    <h2>Soccer Team</h2>
+                    <p>Soccer Team: {soccerTeam.name}</p>
+                    <p>Date Founded: {parseSoccerTeamDate()}</p>
+                    <p>Nationality: {soccerTeam.country}</p>
+                    <p>Coach: {soccerTeam.manager}</p>
+                    <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>
+                    </div>
                 <h2>List of Players</h2>
-                <select value={selectedPosition} onChange={handleSelectPosition}>
-                    <option value ="ALL">All Positions</option>
-                    {populatePositionOptions()}
-                </select>
-                <div className = "soccer-player-card-container">
-                    {filteredSoccerPlayers().map((soccerPlayer) => (
-                        <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />
-                    ))}
+                <div className="soccer-player-selected">
+                    <select value={selectedPosition} onChange={handleSelectPosition}>
+                        <option value ="ALL">All Positions</option>
+                        {populatePositionOptions()}
+                    </select>
+                    <div className = "soccer-player-card-container">
+                        {filteredSoccerPlayers().map((soccerPlayer) => (
+                            <SoccerPlayer key={soccerPlayer.id} soccerPlayer={soccerPlayer} />
+                        ))}
+                    </div>
                 </div>
                 <h3>Add New Soccer Player</h3>
                 <SoccerPlayerForm createSoccerPlayer={createSoccerPlayer}/>
