@@ -1,0 +1,19 @@
+.soccer-player-container table{
+    display: inline-table;
+    justify-content: center;
+    table-layout: fixed ;
+    width: 48% ;
+    font-size: 0.8vw;
+    border-collapse: collapse ;
+    border: 1px white ;
+    display: inline-table;
+    text-align:left;
+}
+
+@media (max-width: 1200px) {
+    .soccer-player-container table {
+        font-size: 2.05vw;
+        width: 100%;
+    }
+}
+

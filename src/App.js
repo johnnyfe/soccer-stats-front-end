@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import SoccerTeamDetails from './components/SoccerTeamDetails';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
+import SoccerPlayerContainer from './components/SoccerPlayerContainer';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/soccer_players">
-              <h2>All players comes here!</h2>
+              <SoccerPlayerContainer />
             </Route>
             <Route exact path="/">
               <HomePage />

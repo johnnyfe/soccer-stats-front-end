@@ -1,0 +1,15 @@
+.all-soccer-player-bottom{
+    justify-content: center;
+    table-layout: fixed ;
+    width: 48% ;
+    border-collapse: collapse ;
+    border: 1px white ;
+    display: inline-table;
+    text-align:justify;
+}
+
+@media (min-width: 560px) {
+    .all-soccer-player-bottom table {
+        color: green;
+    }
+}
