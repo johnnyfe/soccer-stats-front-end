@@ -38,7 +38,7 @@ function SoccerTeamDetails() {
 
     function populatePositionOptions(){
         return uniquePositions().map((position) => 
-        (<option value={position}>{position}</option>));
+        (<option key={position.toString()} value={position}>{position}</option>));
     }
 
     function handleSelectPosition(e) {
@@ -86,7 +86,7 @@ function SoccerTeamDetails() {
             <>  <div className="soccer-team-selected">
                 <h2>Soccer Team</h2>
                 <p>Soccer Team: {soccerTeam.name}</p>
-                <p>Date Founded: {parseSoccerTeamDate(id)}</p>
+                <p>Date Founded: {parseSoccerTeamDate()}</p>
                 <p>Nationality: {soccerTeam.country}</p>
                 <p>Coach: {soccerTeam.manager}</p>
                 <img src={soccerTeam.img_url} alt={soccerTeam.name}></img>

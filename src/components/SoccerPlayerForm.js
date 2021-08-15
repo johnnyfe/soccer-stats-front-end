@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../styles/SoccerPlayerForm.css";
 
 function SoccerPlayerForm({createSoccerPlayer}) {
 
@@ -38,7 +39,7 @@ function SoccerPlayerForm({createSoccerPlayer}) {
     }
 
     return (
-        <form>
+        <form className="soccer-player-form">
             <label>Name: </label>
             <input onChange={handleChange} name="name" value={formData.name} /><br/>
             <label>age: </label>
