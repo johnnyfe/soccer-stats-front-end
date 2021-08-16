@@ -30,6 +30,7 @@ function SoccerPlayerContainer() {
     function handleChange(e){
         setCurrentSearch(e.target.value)
     }
+
     
     return (
         <div>

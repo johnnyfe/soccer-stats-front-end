@@ -10,6 +10,10 @@
     text-align:left;
 }
 
+.soccer-player-container {
+    padding-bottom: 30vw;
+}
+
 @media (max-width: 1200px) {
     .soccer-player-container table {
         font-size: 2.05vw;
