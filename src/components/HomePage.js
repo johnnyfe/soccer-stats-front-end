@@ -12,6 +12,7 @@ function HomePage() {
 
             <p>Contact info:</p>
             <p>info@soccerhero.com</p>
+            <p>Run on your local "http://127.0.0.1:9393/" to get info</p>
 
             <p>Subscription of 1 years for less than 7.99 per month!</p><br/><br/>
         </div>
